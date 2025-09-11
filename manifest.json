@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "ACT® Score Hider",
+  "version": "1.0",
+  "description": "Hide ACT scores on page load and reveal them by clicking",
+  
+  "permissions": [
+  ],
+  
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.act.org/*",
+        "*://act.org/*",
+        "*://student.act.org/*",
+        "*://*.student.act.org/*"
+      ],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_end"
+    }
+  ],
+  
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "ACT® Score Hider"
+  }
+}
