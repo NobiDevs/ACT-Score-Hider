@@ -1,0 +1,53 @@
+.act-score-clickable {
+    background-color: #f0f0f0 !important;
+    border: 2px dashed #999 !important;
+    border-radius: 4px !important;
+    padding: 2px 4px !important;
+    transition: all 0.2s ease !important;
+    font-weight: bold !important;
+    color: #666 !important;
+}
+
+.act-score-clickable:hover {
+    background-color: #e0e0e0 !important;
+    border-color: #666 !important;
+    color: #333 !important;
+}
+
+.act-score-revealed {
+    background-color: #d4edda !important;
+    border: 2px solid #155724 !important;
+    border-radius: 4px !important;
+    padding: 2px 4px !important;
+    color: #155724 !important;
+    font-weight: bold !important;
+}
+
+circle:has(+ text.act-score-clickable),
+circle + text.act-score-clickable,
+g:has(text.act-score-clickable) circle {
+    opacity: 0.7 !important;
+    stroke: #999 !important;
+    stroke-width: 2 !important;
+    stroke-dasharray: 5,5 !important;
+    cursor: pointer !important; 
+}
+
+text.score-large:not([data-score-hider-processed]),
+text.score-small:not([data-score-hider-processed]),
+.score-value:not([data-score-hider-processed]) {
+    visibility: hidden !important;
+}
+
+.act-score-revealed {
+    animation: scoreReveal 0.5s  !important;
+}
+
+@keyframes scoreReveal {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
