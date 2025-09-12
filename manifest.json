@@ -5,6 +5,7 @@
   "description": "Hide ACT scores on page load and reveal them by clicking",
   
   "permissions": [
+    "storage"
   ],
   
   "content_scripts": [
@@ -15,14 +16,19 @@
         "*://student.act.org/*",
         "*://*.student.act.org/*"
       ],
-      "js": ["content.js"],
+      "js": ["content.js", "confetti.js"],
       "css": ["styles.css"],
       "run_at": "document_end"
     }
   ],
   
   "action": {
-    "default_popup": "popup.html",
+    "default_popup": "popup/popup.html",
     "default_title": "ACT® Score Hider"
+  },
+  "icons": {
+    "512": "icons/512.png",
+    "128": "icons/128.png",
+    "48": "icons/48.png"
   }
 }
