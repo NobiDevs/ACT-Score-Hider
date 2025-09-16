@@ -30,5 +30,11 @@
     "512": "icons/512.png",
     "128": "icons/128.png",
     "48": "icons/48.png"
-  }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [ "audio/*.mp3" ],
+      "matches": [ "<all_urls>" ]
+    }
+  ]
 }

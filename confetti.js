@@ -1,8 +1,12 @@
-function shootConfetti(x, y) {
-    const confettiCount = 30;
+function shootConfetti(x, y, options = {}) {
+    const {
+        particleCount = 30,
+        spread = 100
+    } = options;
+
     const colors = ['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5', '#2196f3', '#03a9f4', '#00bcd4', '#009688', '#4caf50', '#8bc34a', '#cddc39', '#ffeb3b', '#ffc107', '#ff9800'];
 
-    for (let i = 0; i < confettiCount; i++) {
+    for (let i = 0; i < particleCount; i++) {
         const confetti = document.createElement('div');
         confetti.style.position = 'fixed';
         confetti.style.left = `${x}px`;
@@ -18,7 +22,7 @@ function shootConfetti(x, y) {
         document.body.appendChild(confetti);
 
         const angle = Math.random() * 2 * Math.PI;
-        const distance = Math.random() * 100 + 50;
+        const distance = Math.random() * spread + 50;
 
         const transformX = Math.cos(angle) * distance;
         const transformY = Math.sin(angle) * distance;
