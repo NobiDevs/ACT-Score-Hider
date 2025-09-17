@@ -95,6 +95,5 @@ This extension:
 - Only modifies the visual display of scores on your local browser
 - Stores settings and custom sounds locally in browser storage
 - Does not affect the actual scores or your ACT account
-
 ```
 <sub>ACT® is a trademark registered by the ACT, which is not affiliated with, and does not endorse, this product.</sub>

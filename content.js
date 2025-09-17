@@ -116,7 +116,9 @@
                         if (cachedPersistenceEnabled && revealedScores.includes(getScoreId(element))) {
                             element.dataset.scoreHiderProcessed = 'true';
                             element.dataset.originalScore = text;
+                            element.textContent = text;
                             element.classList.add('act-score-revealed');
+                            removeRevealListeners(element);
                         } else {
                             hideScoreElement(element);
                         }
@@ -156,10 +158,10 @@
         addRevealListeners(element);
     }
 
-    function revealScore(element, playSound = true) {
+    function revealScore(element, playSound = true, persist = true, playConfetti = true) {
         const originalScore = element.dataset.originalScore;
         if (originalScore) {
-            if (cachedPersistenceEnabled) {
+            if (persist && cachedPersistenceEnabled) {
                 const scoreId = getScoreId(element);
                 chrome.storage.local.get('revealedScores', (data) => {
                     const revealedScores = data.revealedScores || [];
@@ -208,7 +210,7 @@
                 }
             }
 
-            if (cachedConfettiEnabled && typeof shootConfetti === 'function') {
+            if (playConfetti && cachedConfettiEnabled && typeof shootConfetti === 'function') {
                 let amount;
                 if (isWritingScore) {
                     if (scoreNum >= 11) amount = 'high';
@@ -254,9 +256,24 @@
     }
 
     function showAllScores() {
+        const toPersist = [];
         document.querySelectorAll('[data-original-score]').forEach(element => {
-            if (element.dataset.originalScore && element.textContent === HIDDEN_TEXT) revealScore(element, false);
+            if (element.dataset.originalScore && element.textContent === HIDDEN_TEXT) {
+                revealScore(element, false, false, false);
+                toPersist.push(getScoreId(element));
+            }
         });
+        if (cachedPersistenceEnabled && toPersist.length > 0) {
+            chrome.storage.local.get('revealedScores', (data) => {
+                const revealedScores = data.revealedScores || [];
+                toPersist.forEach(id => {
+                    if (!revealedScores.includes(id)) revealedScores.push(id);
+                });
+                chrome.storage.local.set({
+                    revealedScores
+                });
+            });
+        }
     }
 
     function hideAllScores() {
