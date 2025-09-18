@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+
     const showAllBtn = document.getElementById('showAll');
     const hideAllBtn = document.getElementById('hideAll');
     const statusDiv = document.getElementById('status');
@@ -170,7 +171,22 @@ document.addEventListener('DOMContentLoaded', function() {
             validateAllRows(thresholdList, saveBtn);
         };
         changeBtn.onclick = () => handleUpload(soundSelect);
-        item.append(minInput, separator, maxInput, soundSelect, changeBtn, deleteBtn);
+        const labelsDiv = document.createElement('div');
+        labelsDiv.className = 'threshold-labels';
+        const minLabel = document.createElement('span');
+        minLabel.textContent = 'MIN';
+        const sepLabel = document.createElement('span');
+        const maxLabel = document.createElement('span');
+        maxLabel.textContent = 'MAX';
+        const soundLabel = document.createElement('span');
+        soundLabel.textContent = 'SELECT SOUND';
+        const changeLabel = document.createElement('span');
+        const deleteLabel = document.createElement('span');
+        labelsDiv.append(minLabel, sepLabel, maxLabel, soundLabel, changeLabel, deleteLabel);
+        const inputsDiv = document.createElement('div');
+        inputsDiv.className = 'threshold-inputs';
+        inputsDiv.append(minInput, separator, maxInput, soundSelect, changeBtn, deleteBtn);
+        item.append(labelsDiv, inputsDiv);
         wrapper.append(item, errorDiv);
         return wrapper;
     }
@@ -219,7 +235,21 @@ document.addEventListener('DOMContentLoaded', function() {
             wrapper.remove();
             validateAllRows(confettiThresholdList, saveConfettiBtn);
         };
-        item.append(minInput, separator, maxInput, amountSelect, deleteBtn);
+        const labelsDiv = document.createElement('div');
+        labelsDiv.className = 'confetti-threshold-labels';
+        const minLabel = document.createElement('span');
+        minLabel.textContent = 'MIN';
+        const sepLabel = document.createElement('span');
+        const maxLabel = document.createElement('span');
+        maxLabel.textContent = 'MAX';
+        const amountLabel = document.createElement('span');
+        amountLabel.textContent = 'INTENSITY';
+        const deleteLabel = document.createElement('span');
+        labelsDiv.append(minLabel, sepLabel, maxLabel, amountLabel, deleteLabel);
+        const inputsDiv = document.createElement('div');
+        inputsDiv.className = 'confetti-threshold-inputs';
+        inputsDiv.append(minInput, separator, maxInput, amountSelect, deleteBtn);
+        item.append(labelsDiv, inputsDiv);
         wrapper.append(item, errorDiv);
         return wrapper;
     }
@@ -238,7 +268,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const reader = new FileReader();
             reader.onload = (event) => {
                 const newSound = {
-                    name: file.name.replace(/\.mp3$/i, ''),
+                    name: file.name.replace(/\.mp3$/i, '').replace(/_/g, ' '),
                     value: event.target.result
                 };
                 chrome.storage.local.get('customSounds', (data) => {
@@ -329,7 +359,15 @@ document.addEventListener('DOMContentLoaded', function() {
     clearDataBtn.addEventListener('click', () => {
         if (clearDataBtn.classList.contains('is-confirming')) {
             chrome.storage.local.clear(() => {
-                location.reload();
+                statusDiv.textContent = 'Data cleared. Please refresh the page.';
+                statusDiv.className = 'status warning';
+                clearDataBtn.textContent = 'Clear';
+                clearDataBtn.classList.remove('is-confirming');
+
+                clearInterval(statusInterval);
+                setTimeout(() => {
+                    statusInterval = setInterval(updateStatus, 2000);
+                }, 5000);
             });
         } else {
             clearDataBtn.classList.add('is-confirming');
@@ -352,22 +390,22 @@ document.addEventListener('DOMContentLoaded', function() {
         const defaultThresholds = [{
                 min: 34,
                 max: 36,
-                sound: 'audio/high-score.mp3'
+                sound: 'audio/Victory.mp3'
             },
             {
                 min: 27,
                 max: 33,
-                sound: 'audio/mid-high-score.mp3'
+                sound: 'audio/Success_Trumpet.mp3'
             },
             {
                 min: 20,
                 max: 26,
-                sound: 'audio/mid-score.mp3'
+                sound: 'audio/Disappointed_Spongebob.mp3'
             },
             {
                 min: 1,
                 max: 19,
-                sound: 'audio/low-score.mp3'
+                sound: 'audio/Boom.mp3'
             }
         ];
         chrome.storage.local.get('soundThresholds', (data) => {
@@ -404,7 +442,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function loadSoundsAndInitialize() {
         fetch('../audio/index.json').then(r => r.json()).then(defaultSounds => {
             audioFiles = defaultSounds.audioFiles.map(f => ({
-                name: f.replace('audio/', '').replace('.mp3', ''),
+                name: f.replace('audio/', '').replace('.mp3', '').replace(/_/g, ' '),
                 value: f
             }));
             chrome.storage.local.get('customSounds', (data) => {
@@ -492,6 +530,6 @@ document.addEventListener('DOMContentLoaded', function() {
     loadSoundsAndInitialize();
     initializeConfettiThresholds();
     updateStatus();
-    const statusInterval = setInterval(updateStatus, 2000);
+    let statusInterval = setInterval(updateStatus, 2000);
     window.addEventListener('beforeunload', () => clearInterval(statusInterval));
 });

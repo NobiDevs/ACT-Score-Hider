@@ -17,7 +17,7 @@ Hides ACT scores on the ACT website and allows you to reveal them by clicking on
 
 - **Automatic Hiding**: Scores are automatically hidden when you visit ACT score pages
 - **Click to Reveal**: Click on any hidden score to reveal it
-- **Sound Effects**: Play custom sounds based on score thresholds (e.g., high score sound for 34-36)
+- **Sound Effects**: Play custom sounds based on score thresholds
 - **Confetti Effects**: Trigger confetti animations based on score thresholds
 - **Persistence**: Remember which scores you've revealed
 - **Customizable Thresholds**: Set custom score ranges for sounds and confetti in the extension popup
@@ -41,9 +41,9 @@ Hides ACT scores on the ACT website and allows you to reveal them by clicking on
 
 ```Sound Effects```
 - Enable/disable sound effects
-- Set score thresholds for different sounds (e.g., high-score.mp3 for 34-36)
+- Set score thresholds for different sounds
 - Upload custom MP3 files for each threshold
-- Default sounds: high-score, mid-high-score, mid-score, low-score
+- Default sounds: Victory, Success_Trumpet, Disappointed_Spongebob, Boom
 
 ```Confetti Effects```
 - Enable/disable confetti animations

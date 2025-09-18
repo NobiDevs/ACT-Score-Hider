@@ -12,22 +12,22 @@
         const defaultSoundThresholds = [{
                 min: 34,
                 max: 36,
-                sound: 'audio/high-score.mp3'
+                sound: 'audio/Victory.mp3'
             },
             {
                 min: 27,
                 max: 33,
-                sound: 'audio/mid-high-score.mp3'
+                sound: 'audio/Success_Trumpet.mp3'
             },
             {
                 min: 20,
                 max: 26,
-                sound: 'audio/mid-score.mp3'
+                sound: 'audio/Disappointed_Spongebob.mp3'
             },
             {
                 min: 1,
                 max: 19,
-                sound: 'audio/low-score.mp3'
+                sound: 'audio/Boom.mp3'
             }
         ];
         const defaultConfettiThresholds = [{
@@ -190,10 +190,10 @@
                 }
                 let soundSrc;
                 if (isWritingScore) {
-                    if (scoreNum >= 10) soundSrc = 'audio/high-score.mp3';
-                    else if (scoreNum >= 8) soundSrc = 'audio/mid-high-score.mp3';
-                    else if (scoreNum >= 6) soundSrc = 'audio/mid-score.mp3';
-                    else soundSrc = 'audio/low-score.mp3';
+                    if (scoreNum >= 10) soundSrc = 'audio/Victory.mp3';
+                    else if (scoreNum >= 8) soundSrc = 'audio/Success_Trumpet.mp3';
+                    else if (scoreNum >= 6) soundSrc = 'audio/Disappointed_Spongebob.mp3';
+                    else soundSrc = 'audio/Boom.mp3';
                 } else {
                     const threshold = cachedSoundThresholds.find(t => scoreNum >= t.min && scoreNum <= t.max);
                     if (threshold && threshold.sound) {

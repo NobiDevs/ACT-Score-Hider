@@ -1,8 +1,8 @@
 {
     "audioFiles": [
-        "audio/high-score.mp3",
-        "audio/mid-high-score.mp3",
-        "audio/mid-score.mp3",
-        "audio/low-score.mp3"
+        "audio/Victory.mp3",
+        "audio/Success_Trumpet.mp3",
+        "audio/Disappointed_Spongebob.mp3",
+        "audio/Boom.mp3"
     ]
 }

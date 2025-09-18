@@ -1,49 +1,45 @@
 {
-  "manifest_version": 3,
-  "name": "ACT® Score Hider",
-  "version": "1.0",
-  "description": "Hide ACT scores on page load and reveal them by clicking",
-  
-  "browser_specific_settings": {
-    "gecko": {
-      "id": "@ACT-Score-Hider.NobiDevs",
-      "data_collection_permissions": {
-        "required": ["none"]
-      }
-    }
-  },
-  
-  "permissions": [
-    "storage"
-  ],
-  
-  "content_scripts": [
-    {
-      "matches": [
-        "*://*.act.org/*",
-        "*://act.org/*",
-        "*://student.act.org/*",
-        "*://*.student.act.org/*"
-      ],
-      "js": ["content.js", "confetti.js"],
-      "css": ["styles.css"],
-      "run_at": "document_end"
-    }
-  ],
-  
-  "action": {
-    "default_popup": "popup/popup.html",
-    "default_title": "ACT® Score Hider"
-  },
-  "icons": {
-    "512": "icons/512.png",
-    "128": "icons/128.png",
-    "48": "icons/48.png"
-  },
-  "web_accessible_resources": [
-    {
-      "resources": [ "audio/*.mp3" ],
-      "matches": [ "<all_urls>" ]
-    }
-  ]
+    "manifest_version": 3,
+    "name": "ACT® Score Hider",
+    "version": "1.0",
+    "description": "Hide ACT scores on page load and reveal them by clicking",
+
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "@ACT-Score-Hider.NobiDevs",
+            "data_collection_permissions": {
+                "required": ["none"]
+            }
+        }
+    },
+
+    "permissions": [
+        "storage"
+    ],
+
+    "content_scripts": [{
+        "matches": [
+            "*://*.act.org/*",
+            "*://act.org/*",
+            "*://student.act.org/*",
+            "*://*.student.act.org/*"
+        ],
+        "js": ["content.js", "confetti.js"],
+        "css": ["styles.css"],
+        "run_at": "document_end"
+    }],
+
+    "action": {
+        "default_popup": "popup/popup.html",
+        "default_title": "ACT® Score Hider"
+    },
+    "icons": {
+        "512": "icons/512.png",
+        "128": "icons/128.png",
+        "48": "icons/48.png"
+    },
+    "web_accessible_resources": [{
+        "resources": ["audio/*.mp3"],
+        "matches": ["<all_urls>"]
+    }]
 }
