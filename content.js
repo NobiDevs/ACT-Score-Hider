@@ -15,13 +15,13 @@
                 sound: 'audio/high-score.mp3'
             },
             {
-                min: 30,
+                min: 27,
                 max: 33,
                 sound: 'audio/mid-high-score.mp3'
             },
             {
                 min: 20,
-                max: 29,
+                max: 26,
                 sound: 'audio/mid-score.mp3'
             },
             {
@@ -36,13 +36,13 @@
                 amount: 'high'
             },
             {
-                min: 30,
+                min: 27,
                 max: 33,
                 amount: 'medium'
             },
             {
                 min: 20,
-                max: 29,
+                max: 26,
                 amount: 'low'
             }
         ];
