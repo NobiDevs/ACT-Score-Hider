@@ -4,6 +4,15 @@
   "version": "1.0",
   "description": "Hide ACT scores on page load and reveal them by clicking",
   
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "@ACT-Score-Hider.NobiDevs",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  },
+  
   "permissions": [
     "storage"
   ],
