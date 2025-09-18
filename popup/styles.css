@@ -243,6 +243,10 @@ button:disabled {
 	color: #c25252;
 }
 
+#confetti-toggle-btn.muted svg {
+	transform: scale(1.3) translate(5px, -4px);
+}
+
 #threshold-list, #confetti-threshold-list {
 	display: flex;
 	flex-direction: column;

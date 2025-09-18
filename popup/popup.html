@@ -5,7 +5,9 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="header"> <h3>ACT Score Hider</h3> </div>
+    <div class="header">
+        <h3>ACT Score Hider</h3>
+    </div>
     <div id="status" class="status">Loading...</div>
 
     <h4 class="section-title">Settings</h4>
@@ -36,8 +38,8 @@
                 <span class="label">Confetti</span>
                 <div class="right-content">
                     <button id="confetti-toggle-btn" class="icon-btn" title="Toggle confetti">
-                        <svg class="icon-on" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3L9.5 8.5L4 11L9.5 13.5L12 19L14.5 13.5L20 11L14.5 8.5L12 3Z" /><path d="M5 3L6 6" /><path d="M18 18L19 21" /><path d="M3 19L6 18" /><path d="M21 5L18 6" /></svg>
-                        <svg class="icon-off" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3L9.5 8.5L4 11L9.5 13.5L12 19L14.5 13.5L20 11L14.5 8.5L12 3Z" /><path d="M5 3L6 6" /><path d="M18 18L19 21" /><path d="M3 19L6 18" /><path d="M21 5L18 6" /></svg>
+                        <svg class="icon-on" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5.8 11.3 2 22l10.7-3.79"/><path d="M4 3h.01"/><path d="M22 8h.01"/><path d="M15 2h.01"/><path d="M22 20h.01"/><path d="m22 2-2.24.75a2.9 2.9 0 0 0-1.96 3.12c.1.86-.57 1.63-1.45 1.63h-.38c-.86 0-1.6.6-1.76 1.44L14 10"/><path d="m22 13-.82-.33c-.86-.34-1.82.2-1.98 1.11c-.11.7-.72 1.22-1.43 1.22H17"/><path d="m11 2 .33.82c.34.86-.2 1.82-1.11 1.98C9.52 4.9 9 5.52 9 6.23V7"/><path d="M11 13c1.93 1.93 2.83 4.17 2 5-.83.83-3.07-.07-5-2-1.93-1.93-2.83-4.17-2-5 .83-.83 3.07.07 5 2Z"/></svg>
+                        <svg class="icon-off" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-party-popper-icon lucide-party-popper"><path d="M5.8 11.3 2 22l10.7-3.79"/><path d="M11 13c1.93 1.93 2.83 4.17 2 5-.83.83-3.07-.07-5-2-1.93-1.93-2.83-4.17-2-5 .83-.83 3.07.07 5 2Z"/></svg>
                     </button>
                     <span class="arrow"></span>
                 </div>
@@ -55,14 +57,16 @@
         <div class="setting-wrapper">
             <div id="storage-settings-header" class="setting-item is-clickable">
                 <span class="label">Storage</span>
-                <div class="right-content"> <span class="arrow"></span> </div>
+                <div class="right-content">
+                    <span class="arrow"></span>
+                </div>
             </div>
             <div class="collapsible-content"><div class="collapsible-content-inner">
                 <div class="sub-setting-item">
                     <span>Remember Revealed Scores</span>
                     <button id="persistence-toggle-btn" class="icon-btn" title="Toggle score persistence">
                         <svg class="icon-on" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                        <svg class="icon-off" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/></svg>
+                        <svg class="icon-off" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9 2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/></svg>
                     </button>
                 </div>
                 <div class="sub-setting-item">
@@ -89,7 +93,7 @@
     <div class="disclaimer">
         <p>ACT® is a trademark registered by the ACT, which is not affiliated with, and does not endorse, this product.</p>
     </div>
-    
+
     <script src="popup.js"></script>
 </body>
 </html>
