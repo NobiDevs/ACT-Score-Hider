@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "ACT® Score Hider",
     "version": "1.0",
-    "description": "Hide ACT scores on page load and reveal them by clicking",
+    "description": "Hides ACT® scores until clicked on, plays sounds, and displays confetti",
 
     "browser_specific_settings": {
         "gecko": {
@@ -19,10 +19,7 @@
 
     "content_scripts": [{
         "matches": [
-            "*://*.act.org/*",
-            "*://act.org/*",
-            "*://student.act.org/*",
-            "*://*.student.act.org/*"
+            "*://*.act.org/*"
         ],
         "js": ["content.js", "confetti.js"],
         "css": ["styles.css"],
