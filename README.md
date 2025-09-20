@@ -13,6 +13,7 @@ Hides ACT scores on the ACT website and allows you to reveal them by clicking on
 </div>
 
 
+
 ### Features
 
 - **Automatic Hiding**: Scores are automatically hidden when you visit ACT score pages
@@ -28,6 +29,11 @@ Hides ACT scores on the ACT website and allows you to reveal them by clicking on
 
 
 ### How It Works
+<p align="center">
+    <img src="https://github.com/user-attachments/assets/ae0fe3a4-8709-46c1-9244-16e804c23459" />
+</p>
+
+---
 
 1. When you visit an ACT scores page, the extension automatically scans for score elements
 2. Valid scores are replaced with "?"
@@ -37,7 +43,10 @@ Hides ACT scores on the ACT website and allows you to reveal them by clicking on
 6. Upload custom MP3 files for personalized sound effects
 
 
+
 ### Settings
+<sup>To access settings, click the extension menu in the toolbar and select **ACT® Score Hider**</sup>
+&nbsp;
 
 ```Sound Effects```
 - Enable/disable sound effects
@@ -96,4 +105,5 @@ This extension:
 - Stores settings and custom sounds locally in browser storage
 - Does not affect the actual scores or your ACT account
 ```
+
 <sub>ACT® is a trademark registered by the ACT, which is not affiliated with, and does not endorse, this product.</sub>
