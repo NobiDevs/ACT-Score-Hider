@@ -7,8 +7,8 @@
 Hides ACT scores on the ACT website and allows you to reveal them by clicking on them.
 <p>
     <img src="https://img.shields.io/badge/Downloads%3A-343434" alt="Downloads:">
-    <a href="https://addons.mozilla.org/en-US/firefox/"><img src="https://img.shields.io/badge/Firefox-FF7139?logo=Firefox&logoColor=white" alt="Download for Firefox"></a>
-    <a href="https://chromewebstore.google.com/"><img src="https://img.shields.io/badge/Chrome-4285F4?logo=GoogleChrome&logoColor=white" alt="Download for Chrome"></a>
+    <a href="https://addons.mozilla.org/en-US/firefox/addon/act-score-hider/"><img src="https://img.shields.io/badge/Firefox-FF7139?logo=Firefox&logoColor=white" alt="Download for Firefox"></a>
+    <a href="https://chromewebstore.google.com/detail/act%C2%AE-score-hider/cbfjphnmcemkkkpbknibkibilinibhbd"><img src="https://img.shields.io/badge/Chrome-4285F4?logo=GoogleChrome&logoColor=white" alt="Download for Chrome"></a>
 </p>
 </div>
 
