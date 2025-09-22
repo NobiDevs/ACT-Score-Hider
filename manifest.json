@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "ACT® Score Hider",
-    "version": "1.0",
+    "version": "1.0.1",
     "description": "Hides ACT® scores until clicked on, plays sounds, and displays confetti",
 
     "browser_specific_settings": {
