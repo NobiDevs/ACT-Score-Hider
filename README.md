@@ -4,7 +4,7 @@
 
 ### ACT Score Hider
 
-Hides ACT scores on the ACT website and allows you to reveal them by clicking on them.
+Hides ACT® scores on the ACT® website and allows you to reveal them by clicking on them.
 <p>
     <img src="https://img.shields.io/badge/Downloads%3A-343434" alt="Downloads:">
     <a href="https://addons.mozilla.org/en-US/firefox/addon/act-score-hider/"><img src="https://img.shields.io/badge/Firefox-FF7139?logo=Firefox&logoColor=white" alt="Download for Firefox"></a>
@@ -16,7 +16,7 @@ Hides ACT scores on the ACT website and allows you to reveal them by clicking on
 
 ### Features
 
-- **Automatic Hiding**: Scores are automatically hidden when you visit ACT score pages
+- **Automatic Hiding**: Scores are automatically hidden when you visit ACT® score pages
 - **Click to Reveal**: Click on any hidden score to reveal it
 - **Sound Effects**: Play custom sounds based on score thresholds
 - **Confetti Effects**: Trigger confetti animations based on score thresholds
@@ -35,7 +35,7 @@ Hides ACT scores on the ACT website and allows you to reveal them by clicking on
 
 ---
 
-1. When you visit an ACT scores page, the extension automatically scans for score elements
+1. When you visit an ACT® scores page, the extension automatically scans for score elements
 2. Valid scores are replaced with "?"
 3. Hidden scores have a dashed border and a "?" placeholder
 4. Click any hidden score to reveal it with a sound effect and/or confetti if configured
